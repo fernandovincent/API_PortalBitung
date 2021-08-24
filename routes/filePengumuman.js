@@ -5,13 +5,13 @@ module.exports = function (app) {
 
   app.route("/").get(jsonku.index);
 
-  app.route("/tampilPengumuman").get(jsonku.tampilSemuaPengumuman);
+  app.route("/tampilFilePengumuman").get(jsonku.tampilSemuaFilePengumuman);
 
-  app.route("/tampilPengumuman/:id").get(jsonku.tampilPengumumanBerdasarkanID);
+  app.route("/tampilFilePengumuman/:id").get(jsonku.tampilFilePengumumanBerdasarkanID);
 
-  app.route("/tambahPengumuman").post(jsonku.tambahPengumuman);
+  app.route("/tambahFilePengumuman").post(jsonku.tambahFilePengumuman);
 
-  app.route("/ubahPengumuman").put(jsonku.ubahPengumuman);
+  app.route("/ubahFilePengumuman").put(jsonku.ubahFilePengumuman);
 
-  app.route("/hapusPengumuman").delete(jsonku.hapusPengumuman);
+  app.route("/hapusFilePengumuman").delete(jsonku.hapusFilePengumuman);
 };

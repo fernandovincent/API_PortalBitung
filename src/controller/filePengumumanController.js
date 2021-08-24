@@ -8,7 +8,7 @@ exports.index = function (req, res) {
 };
 
 // Menampilkan semua data file pengumuman
-exports.tampilSemuaPengumuman = function (req, res) {
+exports.tampilSemuaFilePengumuman = function (req, res) {
   connection.query("SELECT * FROM file_pengumuman", function (error, rows, fileds) {
     if (error) {
       console.log(error);
@@ -19,7 +19,7 @@ exports.tampilSemuaPengumuman = function (req, res) {
 };
 
 // Menampilkan semua data file pengumuman berdasarkan id
-exports.tampilPengumumanBerdasarkanID = function (req, res) {
+exports.tampilFilePengumumanBerdasarkanID = function (req, res) {
   let id = req.params.id;
   connection.query("SELECT * FROM file_pengumuman WHERE id_file_pengumuman = ?", [id], function (error, rows, fields) {
     if (error) {
@@ -31,7 +31,7 @@ exports.tampilPengumumanBerdasarkanID = function (req, res) {
 };
 
 // Menambahkan data file pengumuman
-exports.tambahPengumuman = function (req, res) {
+exports.tambahFilePengumuman = function (req, res) {
   var id_file_pengumuman = req.body.id_file_pengumuman;
   var nama_file = req.body.nama_file;
   var file_pengumuman = req.body.file_pengumuman;
@@ -47,7 +47,7 @@ exports.tambahPengumuman = function (req, res) {
 };
 
 // Merubah data berdasarkan id file pengumuman
-exports.ubahPengumuman = function (req, res) {
+exports.ubahFilePengumuman = function (req, res) {
   var id_file_pengumuman = req.body.id_file_pengumuman;
   var nama_file = req.body.nama_file;
   var file_pengumuman = req.body.file_pengumuman;
@@ -63,7 +63,7 @@ exports.ubahPengumuman = function (req, res) {
 };
 
 // Menghapus data berdasarkan id file pengumuman
-exports.hapusPengumuman = function (req, res) {
+exports.hapusFilePengumuman = function (req, res) {
   var id_file_pengumuman = req.body.id_file_pengumuman;
   connection.query("DELETE FROM daftar_walikota WHERE id_file_pengumuman=?", [id_file_pengumuman], function (error, rows, fields) {
     if (error) {
